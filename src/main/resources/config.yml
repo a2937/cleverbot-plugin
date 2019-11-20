@@ -1,0 +1,23 @@
+#--------------------------------------------------------------------------
+# Welcome to the AvaIre CleverBot Plugin Configuration
+#--------------------------------------------------------------------------
+#
+# Clever is a new service used by Ava for her artificial intelligence,
+# the AI will be disabled without the API key.
+#
+# Get an application key and bot id at: https://www.cleverbot.com/api/
+#
+#
+# Below you'll find all the configurable options for plugin.
+#
+# The configuration is written in a format known as YAML, you can learn
+# more about the format at https://learnxinyminutes.com/docs/yaml
+#
+# Need to validate if the config has no errors and will pass Avas config
+# management system? Try out https://codebeautify.org/yaml-validator
+#
+# Got any questions? Contact the development team on the official support
+# server for Ava at https://avairebot.com/support
+#
+apiKey: ""
+

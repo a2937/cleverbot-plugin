@@ -1,0 +1,20 @@
+apply plugin: 'java'
+
+group 'com.a2937'
+version '0.0.1'
+description 'Adds an ai chatbot to AvaIre'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    //
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    // Due to jitpack not wanting to compile the sources from github,
+    // we're using the raw Jar file instead.
+    //implementation 'com.github.User:Repo:Tag'
+   compileOnly files('./../avaire/AvaIre.jar')
+}
