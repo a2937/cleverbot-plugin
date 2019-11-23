@@ -1,7 +1,7 @@
 apply plugin: 'java'
 
 group 'com.a2937'
-version '0.0.1'
+version '0.0.2'
 description 'Adds an ai chatbot to AvaIre'
 
 sourceCompatibility = 1.8
