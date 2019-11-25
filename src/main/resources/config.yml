@@ -19,5 +19,6 @@
 # Got any questions? Contact the development team on the official support
 # server for Ava at https://avairebot.com/support
 #
-apiKey: ""
+keys:
+    apiKey: ""
 
