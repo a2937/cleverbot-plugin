@@ -18,4 +18,8 @@ public class BotMakerMain extends JavaPlugin {
         EnvironmentOverride.overrideWithPrefix("CLEVERBOT", getConfig());
         getAvaire().getIntelligenceManager().registerService(new BotMakerService(this));
     }
+
+    public String getApiKey() {
+        return this.getConfig().getString("keys.apiKey", "invalid");
+    }
 }

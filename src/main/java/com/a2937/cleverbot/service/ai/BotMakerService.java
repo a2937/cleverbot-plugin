@@ -1,15 +1,18 @@
 package com.a2937.cleverbot.service.ai;
 
+import com.a2937.cleverbot.BotMakerMain;
 import com.avairebot.AvaIre;
 import com.avairebot.chat.ConsoleColor;
 import com.avairebot.contracts.ai.IntelligenceService;
 import com.avairebot.factories.MessageFactory;
 import com.avairebot.handlers.DatabaseEventHolder;
-import com.avairebot.plugin.JavaPlugin;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import net.dv8tion.jda.core.entities.Message;
-import okhttp3.*;
+import okhttp3.HttpUrl;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,8 +25,6 @@ import java.util.concurrent.TimeUnit;
 
 
 public class BotMakerService implements IntelligenceService {
-    public static final MediaType JSON
-        = MediaType.parse("application/json; charset=utf-8");
     private static final Logger log = LoggerFactory.getLogger(BotMakerService.class);
     private static final String actionOutput = ConsoleColor.format(
         "%cyanExecuting Intelligence Action %cyan\" for:"
@@ -40,9 +41,9 @@ public class BotMakerService implements IntelligenceService {
     private Cache<String, String> conversationDictionary;
     private ExecutorService executor;
 
-    private JavaPlugin plugin;
+    private BotMakerMain plugin;
 
-    public BotMakerService(JavaPlugin plugin) {
+    public BotMakerService(BotMakerMain plugin) {
         this.plugin = plugin;
     }
 
@@ -53,7 +54,7 @@ public class BotMakerService implements IntelligenceService {
 
     @Override
     public void registerService(AvaIre avaIre) {
-        apiKey = plugin.getConfig().getString("apiKey", "invalid");
+        apiKey = plugin.getApiKey();
         conversationDictionary = CacheBuilder.newBuilder()
             .expireAfterWrite(1, TimeUnit.DAYS)
             .build();
