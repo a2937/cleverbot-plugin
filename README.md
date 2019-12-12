@@ -1,7 +1,7 @@
 Cleverbot Plugin
 ================
 
-This is a simple plugin that adds the [CleverBot]((https://www.cleverbot.com/) chat bot service to the AvaIre Discord bot.
+This is a simple plugin that adds the [CleverBot](https://www.cleverbot.com/) chat bot service to the AvaIre Discord bot.
 
 ## How to Use
 
